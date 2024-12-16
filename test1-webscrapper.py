@@ -91,3 +91,8 @@ except KeyboardInterrupt:
 #element = driver.find_element(By.ID, "passwd-id")
 
 # Închide browserul dacă optezi să închei manual
+driver.quit()
+
+
+#citeste README
+
