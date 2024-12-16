@@ -43,3 +43,13 @@ driver.quit()
 
 
 #citeste README
+
+
+
+
+###################################################
+
+# fisier_linkuri=open("link.txt","r")
+
+# for link in fisier_linkuri:
+#     print(link)
