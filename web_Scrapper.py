@@ -1,37 +1,44 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
-
+# Configurări opționale pentru Chrome
 chrome_options = Options()
-chrome_options.add_argument('--disable-gpu')  # Dezactivează accelerarea hardware
+chrome_options.add_argument('--disable-gpu')  
 chrome_options.add_argument('--disable-software-rasterizer')
 
-produs='iphone 16'
-produs = produs.replace(' ','+')
-    
-url=f"https://emag.ro/search/{produs}/"
+# URL de test
+produs = 'iphone 16'
+url = f"https://www.emag.ro/search/{produs.replace(' ', '+')}"
 
+# Inițializare ChromeDriver
 service = Service(ChromeDriverManager().install())
-
-# Inițializează WebDriver-ul cu serviciul configurat
 driver = webdriver.Chrome(service=service, options=chrome_options)
 
+# Accesează pagina
 driver.get(url)
-# Browserul va rămâne deschis până închizi manual fereastra
-print("Browserul rămâne deschis. Închide-l manual când termini.")
-try:
-    while True:
-        pass
-except KeyboardInterrupt:
-    print("Ieșire...")
+time.sleep(5)  # Așteaptă pentru încărcarea completă a paginii
 
+# Așteaptă ca toate link-urile să fie disponibile
+WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.TAG_NAME, "a")))
 
-#element = driver.find_element(By.ID, "passwd-id")
+# Extrage și afișează link-urile
+fisier=open("link.txt","w")
 
-# Închide browserul dacă optezi să închei manual
+link_elements = driver.find_elements(By.TAG_NAME, "a")
+print(f"Număr de link-uri găsite: {len(link_elements)}")
+for link in link_elements:
+    href = link.get_attribute("href")
+    if href:  # Verifică dacă href nu este None
+        #print(href)
+        fisier.write(href+"\n")
+
+fisier.close()
 driver.quit()
 
 
