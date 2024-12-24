@@ -19,4 +19,6 @@ Update 24.12.
 Partea de la eMAG a facut o mauru cu API
 Partea de la Altex am facut o eu clasic
 
+Final: folderul "proiect...etc../eMAG" si webscrap_altex cu produse_altex.txt
+
 Noi ne am cam terminat partea de scraping
