@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 import time
+import re #regular expression
 
 # Configurări opționale pentru Chrome
 chrome_options = Options()
@@ -29,16 +30,37 @@ WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.TAG_NAME
 
 # Extrage și afișează link-urile
 fisier=open("link.txt","w")
-
+format1="/pd/"
+format2=f"{produs.replace(' ', '-')}"
 link_elements = driver.find_elements(By.TAG_NAME, "a")
-print(f"Număr de link-uri găsite: {len(link_elements)}")
+#print(f"Număr de link-uri găsite: {len(link_elements)}")
+nr=0
 for link in link_elements:
     href = link.get_attribute("href")
-    if href:  # Verifică dacă href nu este None
-        #print(href)
+    if href and format1 in href and format2 in href:  # Verifică dacă href nu este None
+        nr+=1
         fisier.write(href+"\n")
 
+print(nr)
 fisier.close()
+fisier_linkuri=open("link.txt","r")
+links=[]
+links=fisier_linkuri.readlines()
+lista_linkuri_noua=[]
+
+for link in links:
+    if link not in lista_linkuri_noua:
+        lista_linkuri_noua.append(link)
+fisier_linkuri.close()
+
+for link in lista_linkuri_noua:
+    if re.match("$?",link):
+        lista_linkuri_noua.remove(link)
+
+for link in lista_linkuri_noua:
+    print(link)
+
+
 driver.quit()
 
 
