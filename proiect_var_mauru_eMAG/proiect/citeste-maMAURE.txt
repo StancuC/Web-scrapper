@@ -1,0 +1,22 @@
+!!! PRIMA DATA TESTEAZA PRODSCRAPER.PY !!!
+
+FISIERUL PAGESCRAPER
+
+ARE ROLUL DE A EXTRAGE ID URILE PRODUSELOR PENTRU CATEGORIILE AFLATE IN all_hrefs.json (PS. are doar o categorie pentru ca ar dura daca le lasam pe toate, PPS. all_hrefs.json.old are toate categoriile de pe emag, o sa il las eu sa le scrapuiasca o noapte intreaga candva). Pentru a-l rula scrie in terminal comanda py ./pagescraper.py 3 0 10 (3 e proxy ul, inca nu l-am facut sa mearga, e irelevant ce pui), 0 e pagina la care incepe, 10 e pagina la care se opreste, poti sa pui si mai putin daca doar incerci sa vezi ca merge.
+
+Dupa ce ruleaza, salveaza id urile de produse in storage/[nume_categorie].json
+
+PS. TREBUIE SA STERGI CE E IN STORAGE INAINTE SA L RULEZI, NU SUPRASCRIE JSONURILE!!
+
+FISIERUL PRODSCRAPER.PY
+
+Scrapuieste datele despre produse dintr un api, am gasit cu un tovaras o vulnerabilitate sa poata extrage toate datele, si specificatii si descriere dar nuj daca are rost (le ia de pe pagina unde compari mai multe produse). Am facut sa le salveze intr un singur JSON, sub fiecare categorie salveaza fiecare produs (ti-am lasat in storage doua categorii cu cate trei produse ca sa incerci scriptu asta)
+
+
+DE FACUT AR MAI FI:
+
+-trimiterea datelor din json care baza de date (script separat) SAU sa scriem direct din prodscraper.py inspre baza de date aleasa
+
+-script care sa lucreze impreuna cu interfata grafica a lui ilie, sa extraga datele despre produsul X din baza de date atunci cand se face o interogare (ma rog, nu despre un produs, sa extraga primele N produse care au un titlu asemanator/se potrivesc idk)
+
+PWPICI CU SCLIPICI SARBATORI FERICITE RIP TYSON CA AZI S-A DUS SARACU
