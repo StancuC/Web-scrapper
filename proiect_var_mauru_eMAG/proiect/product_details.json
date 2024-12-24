@@ -1,0 +1,48 @@
+{
+    "accesorii_server": [
+        {
+            "id": 29232698,
+            "name": "Sursa Server Dell Single Hot Plug 350W",
+            "price": 712.81,
+            "picture": "https://s13emagst.akamaized.net/products/29233/29232698/images/res_ed757c5d29bec454d3d46cc54f6c5574.jpg",
+            "url": "/quick-modal/product/DKMKCBMBM/"
+        },
+        {
+            "id": 30805613,
+            "name": "Ventilator server IBM X3650, X3655, model 39M6803, 46C4014, set 5 bucati",
+            "price": 714,
+            "picture": "https://s13emagst.akamaized.net/products/30806/30805613/images/res_0b3ac0e48c0d6952c6a787407467852e.jpg",
+            "url": "/quick-modal/product/D9QMHYMBM/"
+        },
+        {
+            "id": 33955386,
+            "name": "Ventilator Dell Standard pentru server PowerEdge R640",
+            "price": 199.92,
+            "picture": "https://s13emagst.akamaized.net/products/33956/33955386/images/res_15156ea72a30e320743aa5be6987f707.jpg",
+            "url": "/quick-modal/product/DMPQ17MBM/"
+        }
+    ],
+    "scaune-gaming": [
+        {
+            "id": 26791940,
+            "name": "Scaun gaming, Model Ex Series, Zenga, Negru/Albastru Deschis",
+            "price": 410,
+            "picture": "https://s13emagst.akamaized.net/products/26772/26771899/images/res_645583f7c718a24211918e9d2f7e5df9.jpg",
+            "url": "/quick-modal/product/D2T0BGBBM/"
+        },
+        {
+            "id": 26791941,
+            "name": "Scaun gaming, Model Ex Series, Zenga, Negru/Portocaliu",
+            "price": 369,
+            "picture": "https://s13emagst.akamaized.net/products/26772/26771862/images/res_ba3318a2fd54d4ae4f279090969059be.jpg",
+            "url": "/quick-modal/product/D7T0BGBBM/"
+        },
+        {
+            "id": 57210890,
+            "name": "Scaun Gaming ThunderX3 TC3, Portocaliu/ Negru",
+            "price": 760.83,
+            "picture": "https://s13emagst.akamaized.net/products/57211/57210890/images/res_b68d656afcd957ad8f4004b7baca6cf1.jpg",
+            "url": "/quick-modal/product/DVCPGWMBM/"
+        }
+    ]
+}
